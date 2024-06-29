@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:nc_002/dt_domains/_models/_index.dart';
+import 'package:nc_002/dt_domains/a.biodata/_index.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
@@ -18,3 +20,5 @@ part 'widgets/e.biodata_detail.echo.dart';
 BiodataDetailData get _dt => Data.biodataDetail.st;
 BiodataDetailCtrl get _ct => Ctrl.biodataDetail;
 
+BiodataProv get _pv => Prov.biodata.st;
+BiodataServ get _sv => Serv.biodata;

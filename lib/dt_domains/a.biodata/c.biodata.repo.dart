@@ -19,6 +19,13 @@ class BiodataRepo {
     return biodata;
   }
 
+  Future<Biodata?> getDoc() async {
+    final getDoc = await FirebaseFirestore.instance.collection('nc002').doc(_pv.rxSelectedId.st).get();
+    final product = Biodata.fromMap(getDoc.data() ?? {});
+
+    return product;
+  }
+
   Future<void> createDoc(Biodata data) async {
     await FirebaseFirestore.instance.collection('nc002').doc(data.id).set(data.toMap());
   }

@@ -36,4 +36,6 @@ class BiodataListCtrl {
   }
 
   deleteDoc(String id) => _sv.deleteDoc(id);
+
+  selectedId(String id) => _sv.selectedId(id);
 }

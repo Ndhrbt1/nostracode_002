@@ -8,4 +8,6 @@ class BiodataListData {
   final rxRandom = Prov.sample.st.rxRandom;
 
   final rxBiodataList = _pv.rxBiodataList;
+
+  final rxSelectedId = _pv.rxSelectedId;
 }

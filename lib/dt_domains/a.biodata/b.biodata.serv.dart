@@ -34,6 +34,13 @@ class BiodataServ {
     return _rp.deleteDoc(id);
   }
 
+  selectedId(String id) {
+    _pv.rxSelectedId.refresh();
+    _pv.rxSelectedId.st = id;
+  }
+
+  readDoc() => _pv.rxBiodataDetail.stateAsync = _rp.getDoc();
+
   // * storage
 
   Future<String> getImageUrl(String id) async {

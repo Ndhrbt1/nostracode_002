@@ -22,4 +22,9 @@ class BiodataRepoMock implements BiodataRepo {
   Future<void> deleteDoc(String id) {
     throw UnimplementedError();
   }
+
+  @override
+  Future<Biodata?> getDoc() {
+    throw UnimplementedError();
+  }
 }

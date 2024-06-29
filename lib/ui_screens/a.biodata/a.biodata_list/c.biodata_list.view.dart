@@ -27,6 +27,8 @@ class BiodataListView extends StatelessWidget {
                   (index) => Card(
                     color: Colors.white10,
                     child: ListTile(
+                      selected: _dt.rxSelectedId.st == data[index].id,
+                      selectedColor: Colors.deepPurple,
                       leading: data[index].imageUrl.isEmpty
                           ? const Text('empty photo')
                           : SizedBox(
@@ -34,6 +36,10 @@ class BiodataListView extends StatelessWidget {
                               width: 50,
                               child: Image.network(data[index].imageUrl),
                             ),
+                      onTap: () {
+                        _ct.selectedId(data[index].id);
+                        nav.to(Routes.biodataDetail);
+                      },
                       title: Text(data[index].name),
                       subtitle: Text(data[index].id),
                       trailing: Row(

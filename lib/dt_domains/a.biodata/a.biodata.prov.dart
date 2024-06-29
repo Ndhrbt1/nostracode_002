@@ -17,4 +17,11 @@ class BiodataProv {
   final rxPickedImage = RM.inject<XFile?>(() => null);
 
   final rxImageUrl = RM.inject<String>(() => '');
+
+  final rxSelectedId = RM.inject<String>(() => '');
+
+  final rxBiodataDetail = RM.injectFuture<Biodata?>(() => Future.value(null),
+      sideEffects: SideEffects(
+        initState: () => _sv.readDoc(),
+      ));
 }
