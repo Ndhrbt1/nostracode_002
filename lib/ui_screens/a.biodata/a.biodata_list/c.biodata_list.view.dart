@@ -11,21 +11,30 @@ class BiodataListView extends StatelessWidget {
         child: BiodataListAppbar(),
       ),
       floatingActionButton: const BiodataListFab(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () async {
-                final test = await FirebaseFirestore.instance.collection('nc002').get();
-                debugPrint(test.toString());
-                debugPrint(test.docs[0].data()['age'].toString());
-              },
-              child: const Text(
-                "Elevated Button",
-              ),
+      body: OnBuilder<List<Biodata>>.all(
+        listenTo: _dt.rxBiodataList,
+        onWaiting: () => const Center(
+          child: CircularProgressIndicator(),
+        ),
+        onError: (error, refreshError) => Text(error),
+        onData: (data) => OnReactive(
+          () => Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ...List.generate(
+                  data.length,
+                  (index) => Card(
+                    color: Colors.white10,
+                    child: ListTile(
+                      title: Text(data[index].name),
+                      subtitle: Text(data[index].grade.toString()),
+                    ),
+                  ),
+                )
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
