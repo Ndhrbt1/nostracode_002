@@ -22,5 +22,18 @@ class BiodataListCtrl {
     _sv.createDoc(data);
   }
 
+  updateDoc({required String id, required createdAt}) {
+    final data = Biodata(
+      id: id,
+      name: 'updated',
+      level: 'bootcamp',
+      quotes: 'lslsllssll',
+      study: 'uncil',
+      grade: 2,
+      createdAt: createdAt,
+    );
+    _sv.updateDoc(data);
+  }
+
   deleteDoc(String id) => _sv.deleteDoc(id);
 }

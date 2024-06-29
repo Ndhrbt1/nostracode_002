@@ -38,6 +38,15 @@ class BiodataListView extends StatelessWidget {
                             },
                             icon: const Icon(Icons.delete),
                           ),
+                          IconButton(
+                            onPressed: () {
+                              _ct.updateDoc(
+                                id: data[index].id,
+                                createdAt: data[index].createdAt,
+                              );
+                            },
+                            icon: const Icon(Icons.repeat),
+                          ),
                         ],
                       ),
                     ),

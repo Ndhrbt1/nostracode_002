@@ -20,6 +20,15 @@ class BiodataServ {
     return _rp.createDoc(data);
   }
 
+  updateDoc(Biodata data) {
+    _pv.rxBiodataList.setState(
+      (s) {
+        final index = _pv.rxBiodataList.st.indexWhere((element) => element.id == data.id);
+        return s[index] = data;
+      },
+    );
+  }
+
   deleteDoc(String id) {
     _pv.rxBiodataList.st = [..._pv.rxBiodataList.st]..removeWhere((element) => element.id == id);
     return _rp.deleteDoc(id);
