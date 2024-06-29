@@ -21,4 +21,6 @@ class BiodataListCtrl {
     );
     _sv.createDoc(data);
   }
+
+  deleteDoc(String id) => _sv.deleteDoc(id);
 }

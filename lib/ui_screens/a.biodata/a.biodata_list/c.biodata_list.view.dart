@@ -29,6 +29,17 @@ class BiodataListView extends StatelessWidget {
                     child: ListTile(
                       title: Text(data[index].name),
                       subtitle: Text(data[index].id),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              _ct.deleteDoc(data[index].id);
+                            },
+                            icon: const Icon(Icons.delete),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

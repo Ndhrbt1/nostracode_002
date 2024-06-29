@@ -22,4 +22,8 @@ class BiodataRepo {
   Future<void> createDoc(Biodata data) async {
     await FirebaseFirestore.instance.collection('nc002').doc(data.id).set(data.toMap());
   }
+
+  Future<void> deleteDoc(String id) async {
+    await FirebaseFirestore.instance.collection('nc002').doc(id).delete();
+  }
 }
