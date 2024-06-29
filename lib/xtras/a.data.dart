@@ -10,6 +10,8 @@ abstract class Data {
   static Injected<BiodataAddData> get biodataAdd => _biodataAddData;
   static Injected<BiodataDetailData> get biodataDetail => _biodataDetailData;
   static Injected<BiodataEditData> get biodataEdit => _biodataEditData;
+  static Injected<LoginData> get login => _loginData;
+  static Injected<RegisterData> get register => _registerData;
 }
 
 final _homeData = RM1.inj(HomeData(), Ctrl.home.init);
@@ -22,3 +24,7 @@ final _biodataListData = RM1.inj(BiodataListData(), Ctrl.biodataList.init);
 final _biodataAddData = RM1.inj(BiodataAddData(), Ctrl.biodataAdd.init);
 final _biodataDetailData = RM1.inj(BiodataDetailData(), Ctrl.biodataDetail.init);
 final _biodataEditData = RM1.inj(BiodataEditData(), Ctrl.biodataEdit.init);
+
+final _loginData = RM1.inj(LoginData(), Ctrl.login.init);
+
+final _registerData = RM1.inj(RegisterData(), Ctrl.register.init);

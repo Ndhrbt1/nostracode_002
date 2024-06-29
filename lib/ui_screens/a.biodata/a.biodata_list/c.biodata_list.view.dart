@@ -10,6 +10,32 @@ class BiodataListView extends StatelessWidget {
         preferredSize: Size.fromHeight(56),
         child: BiodataListAppbar(),
       ),
+      endDrawer: Drawer(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  _svAuth.deleteCurrentUser();
+                },
+                child: const Text(
+                  "Delete User",
+                ),
+              ),
+              const SizedBoxH(15),
+              ElevatedButton(
+                onPressed: () {
+                  _svAuth.signOut();
+                },
+                child: const Text(
+                  "Sign Out",
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       floatingActionButton: const BiodataListFab(),
       body: OnBuilder<List<Biodata>>.all(
         listenTo: _dt.rxBiodataList,
@@ -51,15 +77,15 @@ class BiodataListView extends StatelessWidget {
                             },
                             icon: const Icon(Icons.delete),
                           ),
-                          IconButton(
-                            onPressed: () {
-                              _ct.updateDoc(
-                                id: data[index].id,
-                                createdAt: data[index].createdAt,
-                              );
-                            },
-                            icon: const Icon(Icons.repeat),
-                          ),
+                          // IconButton(
+                          //   onPressed: () {
+                          //     _ct.updateDoc(
+                          //       id: data[index].id,
+                          //       createdAt: data[index].createdAt,
+                          //     );
+                          //   },
+                          //   icon: const Icon(Icons.repeat),
+                          // ),
                         ],
                       ),
                     ),

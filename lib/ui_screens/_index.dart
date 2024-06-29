@@ -10,3 +10,5 @@ export 'a.biodata/a.biodata_list/_index.dart';
 export 'a.biodata/b.biodata_add/_index.dart';
 export 'a.biodata/c.biodata_detail/_index.dart';
 export 'a.biodata/d.biodata_edit/_index.dart';
+export 'b.login/_index.dart';
+export 'c.register/_index.dart';

@@ -18,7 +18,7 @@ part 'widgets/d.biodata_detail.delta.dart';
 part 'widgets/e.biodata_detail.echo.dart';
 
 BiodataDetailData get _dt => Data.biodataDetail.st;
-BiodataDetailCtrl get _ct => Ctrl.biodataDetail;
+// BiodataDetailCtrl get _ct => Ctrl.biodataDetail;
 
 BiodataProv get _pv => Prov.biodata.st;
-BiodataServ get _sv => Serv.biodata;
+// BiodataServ get _sv => Serv.biodata;

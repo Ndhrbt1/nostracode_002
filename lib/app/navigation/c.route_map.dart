@@ -12,5 +12,7 @@ class RouteMap {
     Routes.biodataAdd: (RouteData data) => const BiodataAddView(),
     Routes.biodataDetail: (RouteData data) => const BiodataDetailView(),
     Routes.biodataEdit: (RouteData data) => const BiodataEditView(),
+    Routes.login: (RouteData data) => const LoginView(),
+    Routes.register: (RouteData data) => const RegisterView(),
   };
 }

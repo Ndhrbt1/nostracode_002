@@ -1,5 +1,5 @@
 import 'package:navigation_builder/navigation_builder.dart';
-
+import 'package:nc_002/xtras/_index.dart';
 import '../../ui_screens/_index.dart';
 
 part 'a.inject.dart';

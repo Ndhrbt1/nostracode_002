@@ -9,4 +9,6 @@ abstract class Ctrl {
   static BiodataAddCtrl get biodataAdd => BiodataAddCtrl();
   static BiodataDetailCtrl get biodataDetail => BiodataDetailCtrl();
   static BiodataEditCtrl get biodataEdit => BiodataEditCtrl();
+  static LoginCtrl get login => LoginCtrl();
+  static RegisterCtrl get register => RegisterCtrl();
 }
