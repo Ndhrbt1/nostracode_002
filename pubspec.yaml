@@ -13,6 +13,11 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.6
+  states_rebuilder: ^6.4.0
+  navigation_builder: ^0.0.4
+  intl: ^0.19.0
+  validators: ^3.0.0
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -22,3 +27,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/json/
