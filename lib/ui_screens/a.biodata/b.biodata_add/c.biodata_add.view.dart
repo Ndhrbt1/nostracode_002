@@ -16,7 +16,7 @@ class BiodataAddView extends StatelessWidget {
         preferredSize: Size.fromHeight(56),
         child: BiodataAddAppbar(),
       ),
-      floatingActionButton: const BiodataAddFab(),
+      // floatingActionButton: const BiodataAddFab(),
       body: Center(
         child: OnFormBuilder(
           listenTo: _dt.rxForm,

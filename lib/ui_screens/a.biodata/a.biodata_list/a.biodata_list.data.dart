@@ -1,7 +1,7 @@
 part of '_index.dart';
 
 class BiodataListData {
-  final rxTitle = 'Biodata List'.inj();
+  final rxTitle = 'Welcome To Nostradamus'.inj();
 
   final rxCounter = 0.inj();
 

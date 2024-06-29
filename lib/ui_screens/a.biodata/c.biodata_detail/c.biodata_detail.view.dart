@@ -18,20 +18,44 @@ class BiodataDetailView extends StatelessWidget {
           ),
           onError: (error, refreshError) => const Text('error'),
           onData: (data) => Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 100,
-                  width: 100,
-                  child: Image.network(data!.imageUrl),
+            child: Card(
+              color: Colors.white10,
+              child: SizedBox(
+                height: 450,
+                width: 450,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    data!.imageUrl.isEmpty
+                        ? const Card(
+                            color: Colors.white10,
+                            child: SizedBox(
+                              height: 150,
+                              width: 150,
+                              child: Center(
+                                  child: Text(
+                                'pick image from gallery',
+                                textAlign: TextAlign.center,
+                              )),
+                            ),
+                          )
+                        : SizedBox(
+                            height: 100,
+                            width: 100,
+                            child: Image.network(data.imageUrl),
+                          ),
+                    const SizedBox(height: 15),
+                    Text('Name: ${data.name}'),
+                    Text('Level: ${data.level}'),
+                    Text(
+                      'Quotes: ${data.quotes}',
+                      textAlign: TextAlign.center,
+                    ),
+                    Text('Study: ${data.study}'),
+                    Text('Grade: ${data.grade}'),
+                  ],
                 ),
-                Text(data.name),
-                Text(data.level),
-                Text(data.quotes),
-                Text(data.study),
-                Text(data.grade.toString()),
-              ],
+              ),
             ),
           ),
         ));
