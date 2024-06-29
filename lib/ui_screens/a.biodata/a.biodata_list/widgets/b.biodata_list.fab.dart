@@ -8,8 +8,7 @@ class BiodataListFab extends StatelessWidget {
     return FloatingActionButton(
       child: const Icon(Icons.add),
       onPressed: () {
-        _ct.increaseCounter();
-        _ct.updateRandom();
+        nav.to(Routes.biodataAdd);
       },
     );
   }
