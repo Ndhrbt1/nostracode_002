@@ -25,81 +25,23 @@ class BiodataAddView extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OnFormBuilder(
-                  listenTo: _dt.rxForm,
-                  builder: () => TextField(
-                    controller: _dt.rxName.controller,
-                    decoration: InputDecoration(
-                      hintText: 'input name',
-                      errorText: _dt.rxName.error,
-                      labelText: 'name',
-                      border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(25))),
-                    ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "Pick image from gallery",
                   ),
                 ),
+                const BiodataAddName(),
                 const SizedBoxH(15),
-                OnFormBuilder(
-                  listenTo: _dt.rxForm,
-                  builder: () => TextField(
-                    controller: _dt.rxLevel.controller,
-                    decoration: InputDecoration(
-                      hintText: 'input level',
-                      labelText: 'level',
-                      errorText: _dt.rxLevel.error,
-                      border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(25))),
-                    ),
-                  ),
-                ),
+                const BiodataAddLevel(),
                 const SizedBoxH(15),
-                OnFormBuilder(
-                  listenTo: _dt.rxForm,
-                  builder: () => TextField(
-                    controller: _dt.rxQuotes.controller,
-                    decoration: InputDecoration(
-                      hintText: 'input quotes',
-                      labelText: 'quotes',
-                      errorText: _dt.rxQuotes.error,
-                      border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(25))),
-                    ),
-                  ),
-                ),
+                const BiodataAddQuotes(),
                 const SizedBoxH(15),
-                OnFormBuilder(
-                  listenTo: _dt.rxForm,
-                  builder: () => TextField(
-                    controller: _dt.rxStudy.controller,
-                    decoration: InputDecoration(
-                      hintText: 'input study',
-                      labelText: 'study',
-                      errorText: _dt.rxStudy.error,
-                      border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(25))),
-                    ),
-                  ),
-                ),
+                const BiodataAddStudy(),
                 const SizedBoxH(15),
-                OnFormBuilder(
-                  listenTo: _dt.rxForm,
-                  builder: () => TextField(
-                    controller: _dt.rxGrade.controller,
-                    decoration: InputDecoration(
-                      hintText: 'input grade',
-                      labelText: 'grade',
-                      errorText: _dt.rxGrade.error,
-                      border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(25))),
-                    ),
-                  ),
-                ),
+                const BiodataAddGrade(),
                 const SizedBoxH(15),
-                OnFormSubmissionBuilder(
-                  listenTo: _dt.rxForm,
-                  onSubmitting: () => const CircularProgressIndicator(),
-                  child: ElevatedButton(
-                    onPressed: () => _ct.submit(),
-                    child: const Text(
-                      "submit",
-                    ),
-                  ),
-                )
+                const BiodataAddSubmit()
               ],
             ),
           ),
