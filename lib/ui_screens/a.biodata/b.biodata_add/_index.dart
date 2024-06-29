@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:nc_002/dt_domains/_models/_index.dart';
 import 'package:nc_002/dt_domains/a.biodata/_index.dart';
 import 'package:nc_002/ui_widgets/spaces/_index.dart';
@@ -23,5 +24,5 @@ part 'widgets/h.biodata_add.submit.dart';
 BiodataAddData get _dt => Data.biodataAdd.st;
 BiodataAddCtrl get _ct => Ctrl.biodataAdd;
 
-// BiodataProv get _pv => Prov.biodata.st;
+BiodataProv get _pv => Prov.biodata.st;
 BiodataServ get _sv => Serv.biodata;

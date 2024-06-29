@@ -13,4 +13,8 @@ class BiodataProv {
       sideEffects: SideEffects(
         initState: () => _sv.readColl(),
       ));
+
+  final rxPickedImage = RM.inject<XFile?>(() => null);
+
+  final rxImageUrl = RM.inject<String>(() => '');
 }

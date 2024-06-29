@@ -8,14 +8,16 @@ class BiodataAddCtrl {
   updateRandom() => Serv.sample.updateRandom();
 
   createDoc() async {
+    final id = UniqueKey().toString();
     final data = Biodata(
-      id: UniqueKey().toString(),
+      id: id,
       name: _dt.rxName.value,
       level: _dt.rxLevel.value,
       quotes: _dt.rxQuotes.value,
       study: _dt.rxStudy.value,
       grade: int.parse(_dt.rxGrade.value),
       createdAt: DateTime.now().toString(),
+      imageUrl: await _sv.getImageUrl(id),
     );
     await _sv.createDoc(data);
     debugPrint(data.toString());

@@ -33,4 +33,19 @@ class BiodataServ {
     _pv.rxBiodataList.st = [..._pv.rxBiodataList.st]..removeWhere((element) => element.id == id);
     return _rp.deleteDoc(id);
   }
+
+  // * storage
+
+  Future<String> getImageUrl(String id) async {
+    final uin8list = await _pv.rxPickedImage.st?.readAsBytes();
+    final contentType = _pv.rxPickedImage.st?.mimeType;
+    final url = await FirebaseStorage.instance.ref(id).putData(
+          uin8list!,
+          SettableMetadata(contentType: contentType),
+        );
+    _pv.rxImageUrl.st = await url.ref.getDownloadURL();
+
+    debugPrint(_pv.rxImageUrl.st);
+    return _pv.rxImageUrl.st;
+  }
 }

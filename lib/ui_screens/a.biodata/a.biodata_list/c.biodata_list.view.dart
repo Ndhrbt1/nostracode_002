@@ -27,6 +27,13 @@ class BiodataListView extends StatelessWidget {
                   (index) => Card(
                     color: Colors.white10,
                     child: ListTile(
+                      leading: data[index].imageUrl.isEmpty
+                          ? const Text('empty photo')
+                          : SizedBox(
+                              height: 50,
+                              width: 50,
+                              child: Image.network(data[index].imageUrl),
+                            ),
                       title: Text(data[index].name),
                       subtitle: Text(data[index].id),
                       trailing: Row(
