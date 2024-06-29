@@ -21,6 +21,7 @@ class BiodataServ {
   }
 
   updateDoc(Biodata data) {
+    _rp.createDoc(data);
     _pv.rxBiodataList.setState(
       (s) {
         final index = _pv.rxBiodataList.st.indexWhere((element) => element.id == data.id);

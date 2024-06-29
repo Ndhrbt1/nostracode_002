@@ -21,13 +21,11 @@ class BiodataDetailView extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                data!.imageUrl.isEmpty
-                    ? const Text('empty photo')
-                    : SizedBox(
-                        height: 100,
-                        width: 100,
-                        child: Image.network(data.imageUrl),
-                      ),
+                SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: Image.network(data!.imageUrl),
+                ),
                 Text(data.name),
                 Text(data.level),
                 Text(data.quotes),
