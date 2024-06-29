@@ -7,17 +7,18 @@ class BiodataListCtrl {
 
   updateRandom() => Serv.sample.updateRandom();
 
-  Future<List<Biodata>> getColl() async {
-    List<Biodata> biodata = [];
-    final result = await FirebaseFirestore.instance.collection('nc002').get();
+  readColl() => _sv.readColl();
 
-    for (var element in result.docs) {
-      biodata.add(Biodata.fromMap(element.data()));
-    }
-
-    debugPrint(result.docs[0].data().toString());
-    return biodata;
+  createDoc() {
+    final data = Biodata(
+      id: UniqueKey().toString(),
+      name: 'indah',
+      level: 'bootcamp',
+      quotes: 'lslsllssll',
+      study: 'uncil',
+      grade: 2,
+      createdAt: DateTime.now().toString(),
+    );
+    _sv.createDoc(data);
   }
-
-  readColl() => _dt.rxBiodataList.stateAsync = _ct.getColl();
 }

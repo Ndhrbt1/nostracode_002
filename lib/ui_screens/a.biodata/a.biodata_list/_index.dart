@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nc_002/dt_domains/_models/_index.dart';
+import 'package:nc_002/dt_domains/a.biodata/_index.dart';
 import 'package:states_rebuilder/states_rebuilder.dart';
 
 import '../../../app/_index.dart';
@@ -19,3 +19,5 @@ part 'widgets/e.biodata_list.echo.dart';
 
 BiodataListData get _dt => Data.biodataList.st;
 BiodataListCtrl get _ct => Ctrl.biodataList;
+BiodataProv get _pv => Prov.biodata.st;
+BiodataServ get _sv => Serv.biodata;

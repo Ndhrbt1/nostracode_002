@@ -28,10 +28,18 @@ class BiodataListView extends StatelessWidget {
                     color: Colors.white10,
                     child: ListTile(
                       title: Text(data[index].name),
-                      subtitle: Text(data[index].grade.toString()),
+                      subtitle: Text(data[index].id),
                     ),
                   ),
-                )
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    _ct.createDoc();
+                  },
+                  child: const Text(
+                    "create doc",
+                  ),
+                ),
               ],
             ),
           ),
